@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -14,7 +13,6 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,6 +23,10 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +41,66 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <form class="form-group">
+      <div class="form--section">
+        <div class="form--input-group span-md-2">
+          <label>First Name</label> 
+          <input class="form--input" placeholder="John" />
+        </div>
+        <div class="form--input-group span-md-2">
+          <label>Last Name</label> 
+          <input class="form--input" placeholder="Doe" />
+        </div>
+      </div>
+      <div class="form--section">
+        <div class="form--input-group span-md-2">
+          <label>Phone Number</label> 
+          <input class="form--input" placeholder="0123456789" />
+        </div>
+        <div class="form--input-group span-md-2">
+          <label>Email</label> 
+          <input class="form--input" placeholder="me@mail.com" />
+        </div>
+      </div>
+      <div class="form--header">
+        <h3>Education</h3>
+        <button class="symbol--button" >&#x2b;</button>
+        <div class="form--section">
+          <div class="form--input-group span-md-3">
+            <label>School</label> 
+            <input class="form--input" placeholder="School of Hard Knocks" />
+          </div>
+          <div class="form--input-group span-md-3">
+            <label>Major</label> 
+            <input class="form--input" placeholder="Computer Science" />
+          </div>
+          <div class="form--input-group span-md-3">
+            <label>Years Attended</label> 
+            <input class="form--input" placeholder="2018-2020" />
+          </div>
+        </div>
+      </div>
+      <div class="form--header">
+        <h3>Work History</h3>
+        <button class="symbol--button" >&#x2b;</button>
+        <div class="form--section">
+          <div class="form--input-group span-md-3">
+            <label>Company</label> 
+            <input class="form--input" placeholder="Microsoft" />
+          </div>
+          <div class="form--input-group span-md-3">
+            <label>Title</label> 
+            <input class="form--input" placeholder="Lead Designer" />
+          </div>
+          <div class="form--input-group span-md-3">
+            <label>Employment Duration</label> 
+            <input class="form--input" placeholder="2018-2020" />
+          </div>
+        </div>
+        <div class="form--section">
+          <textarea class="form--textarea span-lg" placeholder="Description..."></textarea>
+        </div>
+      </div>
+    </form> -->
   </body>
 </html>
