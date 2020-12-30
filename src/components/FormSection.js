@@ -4,7 +4,6 @@ import FormItem from './FormItem'
 class FormSection extends React.Component {
 
     render(){
-        console.log("FormSection")
         const formItems = this.props.details.map(item => {
             return ( 
                 <FormItem
@@ -12,6 +11,9 @@ class FormSection extends React.Component {
                     label={item.label}
                     placeholder={item.placeholder}
                     className={item.className}
+                    name={item.name}
+                    value={this.props.value}
+                    handleChange={this.props.handleChange}
                 />
             )
                 

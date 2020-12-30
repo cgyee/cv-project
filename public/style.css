@@ -37,26 +37,30 @@
 }
 
 .symbol--button {
-    height: 40px;
+    height: 35px;
     width: 80px;
     border: none;
     background-color: #6699ff;
     color: white;
     border-radius: 2px;
     font-size: 2em;
+    text-align: center;
 }
 
 .symbol--button:hover {
     transform: scale(1.1);
 }
 
-.add:hover {
-    border:2px solid #669999;
-
+.add {
+    background-color: #33cc33;
 }
 
-.remove:hover {
-    border:2px solid #669999;
+.remove {
+    background-color: #ff0000;
+}
+
+.add:hover, .remove:hover {
+    border:2px solid white;
 
 }
 

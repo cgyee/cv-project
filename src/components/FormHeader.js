@@ -12,7 +12,6 @@ class FormHeader extends React.Component {
     }
     addSection() {
         const section = this.props.details
-
         this.setState(prevState => {
             return {"sections": prevState.sections.concat([section])}
         })
@@ -24,30 +23,33 @@ class FormHeader extends React.Component {
         })
     }
     render() {
-        console.log("formheader ", this.props.details)
+        const className = this.props.className
+        const header = this.props.header
+        const removeButtonClassName = this.props.removeButtonclassName
+        const addButtonClassName = this.props.addButtonclassName
+
         const sections = this.state.sections.map(details => {
-            console.log("details", details)
             return (
-                <FormSection  details={details} />
+                <FormSection  value={this.props.value} details={details} handleChange={this.props.handleChange} />
             )
         })
         const removeButton = sections.length ? (
-            <button 
-                className={this.props.removeButtonclassName}
+            <i 
+                className={removeButtonClassName}
                 onClick={this.removeSection}>
                 {this.props.removeSymbol}
-            </button>
+            </i>
         ):
             ""
         
         return (
-            <div className={this.props.className}>
-                <h3>{this.props.header}</h3>
-                <button 
-                    className={this.props.addButtonclassName}
+            <div className={className}>
+                <h3>{header}</h3>
+                <i 
+                    className={addButtonClassName}
                     onClick={this.addSection}>
                     {this.props.addSymbol}
-                </button>
+                </i>
                 {sections}
                 {removeButton}
             </div>
