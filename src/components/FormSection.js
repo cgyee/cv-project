@@ -6,26 +6,26 @@ class FormSection extends React.Component {
 
     render(){
         const handleChange = this.props.handleChange
-        const formItems = this.props.details.map(item => {
+        const formItems = this.props.details.map((item, i) => {
             return ( 
-                // item.placeholder !== "description" ?
+                item.placeholder !== "description" ?
                 <FormItem
-                    key={uuidv4()} 
+                    key={`formItem-${i}`} 
                     label={item.label}
                     placeholder={item.placeholder}
                     className={item.className}
                     name={item.name}
                     value={this.props.value}
-                    handleChange={this.props.handleChange}
+                    handleChange={handleChange}
                 />
-                // :<textarea 
-                //     key={uuidv4()}
-                //     className={item.className} 
-                //     placeholder={item.placeholder}
-                //     name={item.name}
-                //     value={this.props.value[item.name]}
-                //     onChange={handleChange}
-                // />
+                :<textarea 
+                    key={`formItem-${i}`}
+                    className={item.className} 
+                    placeholder={item.placeholder}
+                    name={item.name}
+                    value={this.props.value[item.name]}
+                    onChange={handleChange}
+                />
             )
                 
                 

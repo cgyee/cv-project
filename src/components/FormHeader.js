@@ -32,7 +32,7 @@ class FormHeader extends React.Component {
                     name={this.props.type}>
                     {this.props.addSymbol}
                 </i>
-                <FormSection  key={uuidv4()}value={this.props.value} details={details} handleChange={this.props.handleChange} />
+                <FormSection  key={`formHSection-${this.props.header}`}value={this.props.value} details={details} handleChange={this.props.handleChange} />
             </div>
         )
     }

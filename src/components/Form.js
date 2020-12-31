@@ -50,10 +50,10 @@ class Form extends React.Component {
 
     render() {
         const data = labels
-        const sections = data.map(items => {
+        const sections = data.map((items, i) => {
             return items["header"] ?
                 <FormHeader
-                    key={uuidv4()} 
+                    key={`formSection-${i}`} 
                     header={items.header}
                     className={items.className}
                     addButtonclassName={items.addButtonclassName}
@@ -66,7 +66,7 @@ class Form extends React.Component {
                     handleChange={this.handleChange}
                 />:
                 <FormSection 
-                    key={uuidv4()} 
+                    key={`formHeader-${i}`}  
                     details={items}
                     value={this.state}
                     handleChange={this.handleChange}
