@@ -39,12 +39,20 @@ const labels = [
         "removeButtonclassName": "material-icons symbol--button remove",
         "addSymbol": "add",
         "removeSymbol": "remove",
+        "type": "education",
         "details": [
             {
                 "label": "School",
                 "placeholder": "School of Hard Knocks",
                 "className": "span-md-3",
                 "name": "school"
+            },
+
+            {
+                "label": "Degree",
+                "placeholder": "Bachelor of Science",
+                "className": "span-md-3",
+                "name": "degree"
             },
     
             {
@@ -70,6 +78,7 @@ const labels = [
         "removeButtonclassName": "material-icons symbol--button remove",
         "addSymbol": "add",
         "removeSymbol": "remove",
+        "type": "workHistory",
         "details": [
             {
                 "label": "Company",
@@ -90,6 +99,13 @@ const labels = [
                 "placeholder": "2018-2020",
                 "className": "span-md-3",
                 "name": "duration"
+            },
+
+            {
+                "label": "Job Description",
+                "placeholder": "description",
+                "className": "form--textarea span-lg",
+                "name": "jobInfo"
             }
         ] 
     }

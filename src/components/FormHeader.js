@@ -1,57 +1,38 @@
 import React from 'react'
+import FormOutput from './FormOutput';
 import FormSection from './FormSection';
+import { v4 as uuidv4 } from 'uuid'
 
 class FormHeader extends React.Component {
-    constructor(props) {
-        super(props)
-        this.addSection = this.addSection.bind(this);
-        this.removeSection = this.removeSection.bind(this)
-        this.state = {
-            "sections": []
-        }
-    }
-    addSection() {
-        const section = this.props.details
-        this.setState(prevState => {
-            return {"sections": prevState.sections.concat([section])}
-        })
-    }
-
-    removeSection() {
-        this.setState(prevState => {
-            return{"sections": prevState.sections.slice(0,-1)}
-        })
-    }
+    // constructor(props) {
+    //     super(props)
+    //     this.addSection = this.addSection.bind(this);
+        
+    // }
+    // addSection() {
+    //     const outputSection = this.props.value[this.props.type].map(items => {
+    //         return <FormOutput key={uuidv4()} items={items} />
+    //     })
+        
+    // }
     render() {
         const className = this.props.className
         const header = this.props.header
-        const removeButtonClassName = this.props.removeButtonclassName
         const addButtonClassName = this.props.addButtonclassName
+        const details = this.props.details
 
-        const sections = this.state.sections.map(details => {
-            return (
-                <FormSection  value={this.props.value} details={details} handleChange={this.props.handleChange} />
-            )
-        })
-        const removeButton = sections.length ? (
-            <i 
-                className={removeButtonClassName}
-                onClick={this.removeSection}>
-                {this.props.removeSymbol}
-            </i>
-        ):
-            ""
         
         return (
             <div className={className}>
                 <h3>{header}</h3>
+                {/* {outputSection} */}
                 <i 
                     className={addButtonClassName}
-                    onClick={this.addSection}>
+                    // onClick={this.props.submitSection}
+                    name={this.props.type}>
                     {this.props.addSymbol}
                 </i>
-                {sections}
-                {removeButton}
+                <FormSection  key={uuidv4()}value={this.props.value} details={details} handleChange={this.props.handleChange} />
             </div>
         )
     }
