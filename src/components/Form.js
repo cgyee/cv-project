@@ -2,7 +2,6 @@ import React from 'react'
 import FormSection from './FormSection'
 import FormHeader from './FormHeader'
 import labels from './formData'
-import { v4 as uuidv4 } from 'uuid'
 
 class Form extends React.Component {
     constructor(){
@@ -14,6 +13,7 @@ class Form extends React.Component {
             "phoneNumber": "",
             "email": "",
             "school": "",
+            "degree": "",
             "major": "",
             "attendance": "",
             "company": "",
@@ -24,6 +24,7 @@ class Form extends React.Component {
             "workHistory": []
         }
         this.handleChange = this.handleChange.bind(this)
+        this.submitSection = this.submitSection.bind(this)
         // this.addInfo = this.addInfo.bind(this)
     }
 
@@ -32,12 +33,12 @@ class Form extends React.Component {
         this.setState({[name]:value})
         console.log(name, value)
     }
-    submitSection(event) {
-        const {name} = event.target
+    submitSection(name) {
         const value = name === "education" ?
-            [this.state["school"], this.stat["degree"], this.state["major"], this.state["attendance"]]
-            :[this.state["company"], this.stat["title"], this.state["duration"], this.state["description"]]
-            
+            [this.state["school"], this.state["degree"], this.state["major"], this.state["attendance"]]
+            :[this.state["company"], this.state["title"], this.state["duration"], this.state["description"]]
+        
+        console.log(value)
         this.setState(prevState => {
             return {[name]: prevState[name].concat([value])}
         })
@@ -64,6 +65,7 @@ class Form extends React.Component {
                     type={items.type}
                     value={this.state}
                     handleChange={this.handleChange}
+                    submitSection={this.submitSection}
                 />:
                 <FormSection 
                     key={`formHeader-${i}`}  

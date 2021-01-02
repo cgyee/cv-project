@@ -1,6 +1,5 @@
 import React from 'react'
 import FormItem from './FormItem'
-import { v4 as uuidv4 } from 'uuid'
 
 class FormSection extends React.Component {
 
